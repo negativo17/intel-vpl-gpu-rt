@@ -2,14 +2,14 @@
 %global mfx_ver_minor 10
 
 Name:           intel-vpl-gpu-rt
-Version:        24.2.2
-Release:        2%{?dist}
+Version:        24.2.3
+Release:        1%{?dist}
 Summary:        Intel Video Processing Library (Intel VPL) GPU Runtime
 License:        MIT
 URL:            https://www.intel.com/content/www/us/en/developer/tools/oneapi/onevpl.html
 ExclusiveArch:  x86_64
 
-Source0:        https://github.com/intel/%{name}/archive/intel-onevpl-%{version}/intel-onevpl-%{version}.tar.gz
+Source0:        https://github.com/intel/vpl-gpu-rt/archive/intel-onevpl-%{version}/intel-onevpl-%{version}.tar.gz
 
 BuildRequires:  cmake3
 BuildRequires:  devtoolset-9-gcc-c++
@@ -74,6 +74,9 @@ popd
 %{_libdir}/pkgconfig/libmfx-gen.pc
 
 %changelog
+* Thu May 23 2024 Simone Caronni <negativo17@gmail.com> - 24.2.3-1
+- Update to 24.2.3.
+
 * Sat May 04 2024 Simone Caronni <negativo17@gmail.com> - 24.2.2-2
 - Require libvpl 2.11.0 for building.
 
