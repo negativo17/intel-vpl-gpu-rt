@@ -1,5 +1,5 @@
 %global mfx_ver_major 2
-%global mfx_ver_minor 12
+%global mfx_ver_minor 13
 
 Name:           intel-vpl-gpu-rt
 Version:        24.3.4
