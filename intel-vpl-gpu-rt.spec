@@ -2,7 +2,7 @@
 %global mfx_ver_minor 15
 
 Name:           intel-vpl-gpu-rt
-Version:        25.2.5
+Version:        25.2.6
 Release:        1%{?dist}
 Summary:        Intel Video Processing Library (Intel VPL) GPU Runtime
 License:        MIT
@@ -25,8 +25,8 @@ Obsoletes:      oneVPL-intel-gpu < %{version}-%{release}
 Provides:       oneVPL-intel-gpu = %{version}-%{release}
 
 %description
-Intel oneVPL GPU Runtime is a Runtime implementation of oneVPL API for Intel Gen
-GPUs. Runtime provides access to hardware-accelerated video decode, encode and
+Intel oneVPL GPU Runtime is a Runtime implementation of oneVPL API for Intel GPUs.
+Runtime provides access to hardware-accelerated video decode, encode and
 filtering.
 
 %package        devel
@@ -41,7 +41,7 @@ developing applications that use %{name}.
 %autosetup -p1 -n vpl-gpu-rt-intel-onevpl-%{version}
 
 %build
-%cmake
+%cmake -DMFX_ENABLE_AENC=ON
 %cmake_build
 
 %install
@@ -60,6 +60,10 @@ developing applications that use %{name}.
 %{_libdir}/pkgconfig/libmfx-gen.pc
 
 %changelog
+* Fri Jul 11 2025 Simone Caronni <negativo17@gmail.com> - 25.2.6-1
+- Update to 25.2.6.
+- Enable HEVC library for compression efficiency.
+
 * Mon Jun 23 2025 Simone Caronni <negativo17@gmail.com> - 25.2.5-1
 - Update to 25.2.5.
 
